@@ -9,11 +9,16 @@
 
     <title>Introduccón a Git</title>
 
-    <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="resources/css/main.css">
+    <link href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
   </head>
 
   <body>
-    <header>
+<!--
+<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
+
+    <header class="cont">
       <nav class="menu">
         <ul>
           <li><a href="#">Unidad 1<a/>
@@ -22,9 +27,9 @@
               </ul>
           </li>
 
-          <li><a href="#">Unidad 2</a>
-              <ul>
-                <li>aIniciando con Git</li>
+          <li class="submenu"><a href="#">Unidad 2</a>
+              <ul class="subitem">
+                <li>Iniciando con Git</li>
                 <li><a href="#">Git init<a/></li>
                 <li><a href="#">Git status<a/></li>
                 <li><a href="#">Git add<a/></li>
@@ -37,15 +42,80 @@
         </ul>
       </nav>
     </header>
+-->
+
+
+<div class="slider">
+
+  <div class="slide active-slide">
+    <div class="container">
+      <div class="row">
+        <div class="slide-copy col-xs-5">
+          <h1>Introducción a Git</h1>
+          <p>El control de versiones es un sistema que registra los cambios realizados sobre un archivo o
+            conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.</p>
+        </div>
+        <div class="slide-img col-xs-7">
+          <img src="resources/img/logogit.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slide">
+    <div class="container">
+      <div class="row">
+        <div class="slide-copy col-xs-12">
+          <h1>Un poco de historia</h1>
+          <p>
+            En 2005, la relación entre la comunidad que desarrollaba el núcleo de Linux y la compañía que desarrollaba BitKeeper se vino abajo, y la herramienta dejó de ser ofrecida gratuitamente.
+            Esto impulsó a la comunidad de desarrollo de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta basada en algunas de las lecciones que
+            aprendieron durante el uso de BitKeeper. Algunos de los objetivos del nuevo sistema fueron los siguientes:<br/>
+                <strong>Velocidad<br/>Diseño sencillo<br/> Fuerte apoyo al desarrollo no lineal (miles de ramas paralelas)<br/> Completamente distribuido<br/></strong>
+            Capaz de manejar grandes proyectos (como el núcleo de Linux) de manera eficiente (velocidad y tamaño de los datos)
+            Es tremendamente rápido, muy eficiente con grandes proyectos, y tiene un increíble sistema de ramificación (branching) para desarrollo no lineal.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="slide">
+    <div class="container">
+      <div class="row">
+        <div class="slide-copy col-xs-5">
+          <h1>Iniciando con Git</h1>
+          <p>git status</p>
+          <p>git add</p>
+          <p>git commit</p>
+        </div>
+        <div class="slide-img col-xs-7">
+          <img src="#">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="slider-nav">
+  <a href="#" class="arrow-prev">prev</a>
+  <ul class="slider-dots">
+    <li class="dot active-dot">&bull;</li>
+    <li class="dot">&bull;</li>
+    <li class="dot">&bull;</li>
+  </ul>
+  <a href="#" class="arrow-next">next</a>
+</div>
 <!--
-
-
-    <div>
-      <section>
+    <div class="main">
+      <section class="principal">
         <header>
           <h1>Introduccion a Git</h1>
         <header>
-        <img src="#"></img>
+        <img src="resources/img/logogit.png"></img>
       </section>
 
       <section>
@@ -88,19 +158,9 @@
       </section>
 
     </div>
-
-    <div>
-      <footer>
-        <p>Introduccion a Git</p>
-        <p>Tutores</p>
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </footer>
-    </div>
-
 -->
+  <script src="resources/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="resources/js/main.js"></script>
 
   </body>
 </html>
