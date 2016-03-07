@@ -1,166 +1,162 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="description" content="Starting with Git, basic commands">
-    <meta name="keywords" content="Git, intro, introduccion, init, pull, push, repository">
-    <meta name="author" content="Satoshi-Developer">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="Git, Repository, Control version">
+  <meta name="description" content="Iniciando con Git - Sistema de control de versiones">
+  <meta name="author" content="Satoshi-Developer">
 
-    <title>Introduccón a Git</title>
+  <title>Introducción a Git</title>
 
-    <link rel="stylesheet" href="resources/css/main.css">
-    <link href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="resources/bower_components/Materialize/dist/css/materialize.min.css" rel="stylesheet">
 
-  </head>
-
-  <body>
-<!--
-<link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
-
-    <header class="cont">
-      <nav class="menu">
-        <ul>
-          <li><a href="#">Unidad 1<a/>
-              <ul>
-                <li><a href="#">Un poco de historia</a></li>
-              </ul>
-          </li>
-
-          <li class="submenu"><a href="#">Unidad 2</a>
-              <ul class="subitem">
-                <li>Iniciando con Git</li>
-                <li><a href="#">Git init<a/></li>
-                <li><a href="#">Git status<a/></li>
-                <li><a href="#">Git add<a/></li>
-                <li><a href="#">Git commit<a/></li>
-              </ul>
-          </li>
-          <li><a href="#">Unidad 3</a></li>
-          <li><a href="#">Unidad 4</a></li>
-          <li><a href="#">Unidad 5</a></li>
-        </ul>
-      </nav>
-    </header>
--->
-
-
-<div class="slider">
-
-  <div class="slide active-slide">
-    <div class="container">
-      <div class="row">
-        <div class="slide-copy col-xs-5">
-          <h1>Introducción a Git</h1>
-          <p>El control de versiones es un sistema que registra los cambios realizados sobre un archivo o
-            conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.</p>
-        </div>
-        <div class="slide-img col-xs-7">
-          <img src="resources/img/logogit.png">
-        </div>
-      </div>
+</head>
+<body>
+  <div id="diff" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Diferencias</h4>
+      <p>Git acepta kdiff3, tkdiff, meld, xxdiff, emerge, vimdiff, gvimdiff, ecmerge, y opendiff como herramientas válidas.</p>
+      <img src="resources/img/diff.png" width="98%">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
     </div>
   </div>
 
-  <div class="slide">
-    <div class="container">
-      <div class="row">
-        <div class="slide-copy col-xs-12">
-          <h1>Un poco de historia</h1>
-          <p>
+  <div id="options" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>FILTROS PARA --pretty=format</h4>
+      <img src="resources/img/filtros_format.png">
+      <p>MÁS FILTROS</p>
+      <img src="resources/img/filtros.png">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+
+  <div class="slider fullscreen">
+    <ul class="slides">
+
+
+      <li class="deep-orange lighten-1">
+        <img src="#">
+        <div class="caption center-align">
+          <h3>Git</h3>
+
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            El control de versiones es un sistema que registra los cambios realizados sobre un archivo o
+            conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.
+          </p>
+        </div>
+      </li>
+
+
+      <li class="light-blue">
+        <img src="#">
+        <div class="caption center-align">
+          <h3>Fundamentos</h3>
+
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">Sistemas de control de versiones</p>
+
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Local</p>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Centralizado</p>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Distribuido</p>
+
+
+        </div>
+      </li>
+
+
+
+      <li class="lime">
+        <img src="#"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Un poco de historia</h3>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 16px;">
             En 2005, la relación entre la comunidad que desarrollaba el núcleo de Linux y la compañía que desarrollaba BitKeeper se vino abajo, y la herramienta dejó de ser ofrecida gratuitamente.
             Esto impulsó a la comunidad de desarrollo de Linux (y en particular a Linus Torvalds, el creador de Linux) a desarrollar su propia herramienta basada en algunas de las lecciones que
-            aprendieron durante el uso de BitKeeper. Algunos de los objetivos del nuevo sistema fueron los siguientes:<br/>
-                <strong>Velocidad<br/>Diseño sencillo<br/> Fuerte apoyo al desarrollo no lineal (miles de ramas paralelas)<br/> Completamente distribuido<br/></strong>
-            Capaz de manejar grandes proyectos (como el núcleo de Linux) de manera eficiente (velocidad y tamaño de los datos)
-            Es tremendamente rápido, muy eficiente con grandes proyectos, y tiene un increíble sistema de ramificación (branching) para desarrollo no lineal.
+            aprendieron durante el uso de BitKeeper. Algunos de los objetivos del nuevo sistema fueron los siguientes:<br/><br/>
+                <strong>Velocidad<br/>Diseño sencillo<br/> Fuerte apoyo al desarrollo no lineal (miles de ramas paralelas)<br/> Completamente distribuido<br/>Capaz de manejar grandes proyectos (como el núcleo de Linux) de manera eficiente (velocidad y tamaño de los datos)
+            </strong>
+          </p>
+        </div>
+      </li>
+
+
+      <li class="deep-purple lighten-2">
+        <img src="#"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Configurando</h3>
+          <p class="light grey-text text-lighten-4 left-align" style="font-size: 20px;">
+            Git trae una herramienta llamada git config que te permite obtener y establecer variables de configuración, que controlan el aspecto y funcionamiento de Git.
+          </p>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">
+            <strong>git config --list "-l"</strong><br/>
+            <strong>git config --global user.name "username"</strong><br/>
+            <strong>git config --global user.email "useremail"</strong><br/>
+            <strong>git config --global merge.tool <a class="waves-effect waves-light btn modal-trigger" href="#diff"> nombre_herramienta</a></strong><br/>
+            <strong>git config --global core.editor</strong>
           </p>
 
         </div>
-      </div>
-    </div>
+      </li>
+
+
+
+      <li class="green lighten-2">
+        <img src="#"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Iniciando</h3>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git status</strong><br/>
+          </p>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git add</strong><br/>
+          </p>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git commit</strong>
+          </p>
+        </div>
+      </li>
+
+
+
+      <li>
+        <img src="#"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>Filtros</h3>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git diff</strong>
+          </p>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git log</strong>
+          </p>
+          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
+            <strong>git log --pretty=format:" % <a class="waves-effect waves-light btn modal-trigger" href="#options">options</a>"</strong>
+          </p>
+        </div>
+      </li>
+
+
+    </ul>
   </div>
 
-
-  <div class="slide">
-    <div class="container">
-      <div class="row">
-        <div class="slide-copy col-xs-5">
-          <h1>Iniciando con Git</h1>
-          <p>git status</p>
-          <p>git add</p>
-          <p>git commit</p>
-        </div>
-        <div class="slide-img col-xs-7">
-          <img src="#">
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<div class="slider-nav">
-  <a href="#" class="arrow-prev">prev</a>
-  <ul class="slider-dots">
-    <li class="dot active-dot">&bull;</li>
-    <li class="dot">&bull;</li>
-    <li class="dot">&bull;</li>
-  </ul>
-  <a href="#" class="arrow-next">next</a>
-</div>
-<!--
-    <div class="main">
-      <section class="principal">
-        <header>
-          <h1>Introduccion a Git</h1>
-        <header>
-        <img src="resources/img/logogit.png"></img>
-      </section>
-
-      <section>
-        <header>
-          <h3>Unidad 1</h3>
-          <h4>Un poco de historia</h4>
-        </header>
-
-        <article>
-        </article>
-      </section>
-
-
-      <section>
-        <header>
-          <h3>Unidad 2</h3>
-          <h4>Iniciando con Git</h4>
-        </header>
-
-        <article>
-          <div>
-            <h4>git init</h4>
-          </div>
-
-          <div>
-            <h4>git status</h4>
-          </div>
-
-          <div>
-            <h4>git add</h4>
-
-          </div>
-
-          <div>
-            <h4>git commit</h4>
-
-          </div>
-
-        </article>
-      </section>
-
-    </div>
--->
   <script src="resources/bower_components/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="resources/js/main.js"></script>
+  <script src="resources/bower_components/Materialize/dist/js/materialize.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
 
-  </body>
+      $('.slider').slider({full_width: true});
+      $('.slider').slider('pause');
+
+      $('li').click(function () {
+        $('.slider').slider('pause');
+
+    });
+    });
+  </script>
+</body>
 </html>
