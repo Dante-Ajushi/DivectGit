@@ -8,7 +8,7 @@
   <meta name="author" content="Satoshi-Developer">
 
   <title>Introducción a Git</title>
-  
+
   <link href="resources/bower_components/Materialize/dist/css/materialize.min.css" rel="stylesheet">
 
 </head>
@@ -26,10 +26,10 @@
 
   <div id="options" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>FILTROS</h4>
-      <img src="resources/img/filtros.png">
-      <p>MÁS FILTROS</p>
+      <h4>FILTROS PARA --pretty=format</h4>
       <img src="resources/img/filtros_format.png">
+      <p>MÁS FILTROS</p>
+      <img src="resources/img/filtros.png">
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
@@ -44,7 +44,7 @@
         <img src="#">
         <div class="caption center-align">
           <h3>Git</h3>
-          
+
           <p class="dark grey-text text-darken-3" style="font-size: 25px;">
             El control de versiones es un sistema que registra los cambios realizados sobre un archivo o
             conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante.
@@ -57,14 +57,14 @@
         <img src="#">
         <div class="caption center-align">
           <h3>Fundamentos</h3>
-          
+
           <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">Sistemas de control de versiones</p>
-          
-          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; locales</p>
-          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; centralizados</p>
-          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; distribuidos</p>
-          
-          
+
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Local</p>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Centralizado</p>
+          <p class="dark grey-text text-darken-3 left-align" style="font-size: 25px;">&bull; Distribuido</p>
+
+
         </div>
       </li>
 
@@ -99,7 +99,7 @@
             <strong>git config --global merge.tool <a class="waves-effect waves-light btn modal-trigger" href="#diff"> nombre_herramienta</a></strong><br/>
             <strong>git config --global core.editor</strong>
           </p>
-          
+
         </div>
       </li>
 
@@ -134,9 +134,6 @@
             <strong>git log</strong>
           </p>
           <p class="dark grey-text text-darken-3" style="font-size: 25px;">
-            <strong>git log --pretty=oneline</strong>
-          </p>
-          <p class="dark grey-text text-darken-3" style="font-size: 25px;">
             <strong>git log --pretty=format:" % <a class="waves-effect waves-light btn modal-trigger" href="#options">options</a>"</strong>
           </p>
         </div>
@@ -149,13 +146,15 @@
   <script src="resources/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="resources/bower_components/Materialize/dist/js/materialize.min.js"></script>
   <script type="text/javascript">
-  $(document).ready(function(){
-    $('.modal-trigger').leanModal();
-    $('.slider').slider({full_width: true});
-    $('.slider').slider('pause');
-    $('li').click(function () {
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
+
+      $('.slider').slider({full_width: true});
       $('.slider').slider('pause');
-      
+
+      $('li').click(function () {
+        $('.slider').slider('pause');
+
     });
     });
   </script>
