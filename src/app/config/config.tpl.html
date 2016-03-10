@@ -15,7 +15,7 @@
         <div class="row center">
         <h1 class="header center orange-text">Configuración</h1>
           <h6 class="header col s12 light white-text">Git trae una herramienta llamada git config que te permite obtener y establecer variables de configuración, que controlan el aspecto y funcionamiento de Git:
-        <ul id="objetivos">
+        <ul id="listconfig">
           <li><strong>git config --list "-l"</strong></li>
           <li><strong>git config --global user.name "username"</strong></li>
           <li><strong>git config --global user.email "useremail"</strong></li>
@@ -60,7 +60,7 @@
         <div class="row center">
         <h1 class="header center orange-text">Cargando Archivos</h1>
           <h6 class="header col s12 light white-text">para agregar un archivo a tu repositorio ejecuta 
-        <ul id="repo">
+        <ul id="listarch">
           <li><strong>git add archivo.txt</strong></li>
         </ul>
           </h6>
@@ -82,7 +82,7 @@
         <div class="row center">
         <h1 class="header center orange-text">Commit</h1>
           <h6 class="header col s12 light white-text">el commit se usa para agregarlos al index ejecuta el siguiente comanto:  
-        <ul id="repo">
+        <ul id="listcommit">
           <li><strong>git commit -m 'mi primer archivo'</strong></li>
         </ul>
           </h6>
@@ -105,44 +105,22 @@
         <div class="row center">
         <h1 class="header center orange-text">Ramas</h1>
           <h6 class="header col s12 light white-text">Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama master es la rama por "defecto" cuando creas un repositorio. Usa otras ramas para el desarrollo y fusionalas de regreso a la rama principal al terminar. para crear una rama ejecuta el siguiente comando:  
-        <ul>
+        <ul id="listramas">
           <li><strong>git -b rama</strong></li>
-        </ul>
         para cambiarte a esa rama ejecuta el siguiente comando:
-        <ul>
-          <li>
-            <strong>git checkout rama</strong>
-          </li>
+            <li><strong>git checkout rama</strong></li>
           para borrar una rama usa siguiente comando:
-        <ul>
-          <li>
-            <strong>git branch -d rama</strong>
-          </li>
-        </ul>
+            <li><strong>git branch -d rama</strong></li>
         para fusionar una rama usa siguiente comando:
-        <ul>
-          <li>
-            <strong>git merge rama</strong>
-          </li>
-        </ul>
+            <li><strong>git merge rama</strong></li>
         comparte tu rama:
-        <ul>
-          <li>
-            <strong>git push origin rama</strong>
-          </li>
-        </ul>
+            <li><strong>git push origin rama</strong></li>
         descarga las ramas de tus amigos:
-        <ul>
-          <li>
-            <strong>git checkout -b rama origin/rama</strong>
-          </li>
-        </ul>
+            <li><strong>git checkout -b rama origin/rama</strong></li>
         borrar una rama remota:
-        <ul>
-          <li>
-            <strong>git push origin :rama</strong>
-          </li>
+            <li><strong>git push origin :rama</strong></li>
         </ul>
+        
           </h6>
         </div>
       </div>
@@ -160,16 +138,13 @@
         <div class="row center">
         <h1 class="header center orange-text">Etiquetas</h1>
           <h6 class="header col s12 light white-text">Las etiquetas son usadas para marcar cada version publicada. para crear una etiqueta:  
-        <ul>
+        <ul id="listetiquetas">
           <li><strong>git tag nombreEtiqueta</strong></li>
-        </ul>
         transferir etiquetas al repositorio remoto
-        <ul>
           <li><strong> git push origin v1.5</strong></li>
-        </ul>
         transfiere todas tus etiquetas
-        <ul>
           <li><strong> git push origin --tags</strong></li>
+       
         </ul>
         
   
@@ -194,7 +169,7 @@
         <div class="row center">
         <h1 class="header center orange-text">La Arruinaste</h1>
           <h6 class="header col s12 light white-text">Recupera los cambios que efectuaste en tu archivo:  
-        <ul>
+        <ul id="listlaarruinaste">
           <li><strong>git checkout -- archivo.txt</strong></li>
         </ul>
         
@@ -217,7 +192,7 @@
         <div class="row center">
         <h1 class="header center orange-text">La Arruinaste masivamente?</h1>
           <h6 class="header col s12 light white-text">git checkout restaura un archivo hasta el ultimo commit por lo que si la arruinaste y hiciste un commit puedes hacer lo siguiente:  
-        <ul>
+        <ul id="listlaarruinastemasivamente">
           <li><strong>git fetch origin</strong></li>
           <li><strong>git reset --hard origin/master</strong></li>
         </ul>
@@ -242,7 +217,7 @@
         <div class="row center">
         <h1 class="header center orange-text">Github</h1>
           <h6 class="header col s12 light white-text">GitHub es una forja (plataforma de desarrollo colaborativo) para alojar proyectos utilizando el sistema de control de versiones Git. Utiliza el framework Ruby on Rails por GitHub, Inc. (anteriormente conocida como Logical Awesome). Desde enero de 2010, GitHub opera bajo el nombre de GitHub, Inc. El código se almacena de forma pública, aunque también se puede hacer de forma privada, creando una cuenta de pago.  
-        <ul>
+        <ul id="listgithub">
           <li><strong>wiki para cada proyecto</strong></li>
           <li><strong>página web para cada proyecto1</strong></li>
           <li><strong>gráfico para ver cómo los desarrolladores trabajan en sus repositorios y bifurcaciones del proyecto</strong></li>
@@ -264,6 +239,10 @@
   </div>
 
     <script src="resources/bower_components/Materialize/templates/parallax-template/js/init.js"></script>
-
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.modal-trigger').leanModal();
+    });
+    </script>
 
   
