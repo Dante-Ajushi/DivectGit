@@ -1,6 +1,7 @@
 angular.module('app', [
-	'app.history',
 	'app.intro',
+	'app.history',
+	'app.config',
 	'app.about',
 	'app.project',
 	'app.contact',
